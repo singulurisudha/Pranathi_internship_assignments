@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <h4>Students List</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email Address</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.stu_id }}</td>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>{{ student.email }}</td>
+                <td><a type="button" class="btn btn-warning" href="{{ student.stu_id }}/update">Update</a>
+                    <a type="button" class="btn btn-danger" href="{{ student.stu_id }}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a type="button" class="btn btn-success" href="{%url 'register' %}">Create</a>
+</div>
+{% endblock %}
+
+<!-- <ul>
+    {% for student in students %}
+        <li><h3>{{ student.first_name }} {{ student.last_name }}</h3></li>
+        <li><h4>{{ student.email }}</h4></li>
+    {% endfor %}
+</ul> -->

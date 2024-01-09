@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{object.name}}</title>
+</head>
+<body>
+    <p>Product : {{object.name}}</p>
+    <p>Manufacturer : {{object.manufacturer}}</p>
+    <p>Quantity : {{object.quantity}}</p>
+    <p>Price : {{object.price}} INR</p>
+    <p>Description : {{object.description}}</p>
+    <p>Shipping : {{object.shipping_cost}}  INR</p>
+
+    <img src="{{ object.photo.url }}" alt="Product Photo" style="width:500px;height:500px;">
+</body>
+</html>
